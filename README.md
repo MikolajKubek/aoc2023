@@ -1,5 +1,3 @@
-[[toc]]
-
 # 2023 Advent of Code repository
 Repository containing my solutions to [2023 AoC problems](https://adventofcode.com/2023). This year the goal is to attempt solving all AoC tasks using ***Rust*** programming language.
 
