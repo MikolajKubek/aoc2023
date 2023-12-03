@@ -14,7 +14,7 @@ pub fn process_part1(input_str: &str, part2: bool) -> u32 {
         let mut game: Game = Game::new();
         let mut round: Round = Round::new();
 
-        while token.t_type != TokenType::EOF {
+        while token.t_type != TokenType::Eof {
             match token.t_type {
                 TokenType::Game => {}
                 TokenType::Number => {
@@ -29,7 +29,7 @@ pub fn process_part1(input_str: &str, part2: bool) -> u32 {
                     round = Round::new();
                 }
                 TokenType::Comma => {}
-                TokenType::SEMICOLON => {
+                TokenType::Semicolon => {
                     game.rounds.push(round);
                     round = Round::new();
                 }
@@ -42,8 +42,8 @@ pub fn process_part1(input_str: &str, part2: bool) -> u32 {
                 TokenType::ColorBlue => {
                     round.blue = num_stack.pop().unwrap();
                 }
-                TokenType::EOF => {}
-                TokenType::ILLEGAL => panic!("illegal token"),
+                TokenType::Eof => {}
+                TokenType::Illegal => panic!("illegal token"),
             }
             token = lexer.next_token();
         }

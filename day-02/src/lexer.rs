@@ -35,7 +35,7 @@ pub mod lexer {
 
             let token: Token = match self.ch {
                 ';' => Token {
-                    t_type: TokenType::SEMICOLON,
+                    t_type: TokenType::Semicolon,
                     literal: ";".to_owned(),
                 },
                 ',' => Token {
@@ -47,7 +47,7 @@ pub mod lexer {
                     literal: ":".to_owned(),
                 },
                 '\0' => Token {
-                    t_type: TokenType::EOF,
+                    t_type: TokenType::Eof,
                     literal: "\0".to_owned(),
                 },
                 _ => {
@@ -63,7 +63,7 @@ pub mod lexer {
                         }
                     } else {
                         Token {
-                            t_type: TokenType::ILLEGAL,
+                            t_type: TokenType::Illegal,
                             literal: "".to_owned(),
                         }
                     }
@@ -121,7 +121,7 @@ pub mod lexer {
                 "red" => TokenType::ColorRed,
                 "green" => TokenType::ColorGreen,
                 "blue" => TokenType::ColorBlue,
-                _ => TokenType::ILLEGAL,
+                _ => TokenType::Illegal,
             }
         }
     }
@@ -132,11 +132,11 @@ pub mod lexer {
         Number,
         Colon,
         Comma,
-        SEMICOLON,
+        Semicolon,
         ColorRed,
         ColorGreen,
         ColorBlue,
-        EOF,
-        ILLEGAL,
+        Eof,
+        Illegal,
     }
 }
